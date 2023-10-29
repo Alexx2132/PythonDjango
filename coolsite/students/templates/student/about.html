@@ -2,9 +2,20 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>О программе</title>
 </head>
 <body>
-<h1>О приложении</h1>
+<h1>{{menu.1.title}}</h1>
+<ul>
+    {% for m in menu %}
+<li>
+    <a href="{% url m.url_n %}"> {{m.title}} </a>
+</li>
+    {% endfor %}
+</ul>
+
+
+
+<p>Здесь может быть информация о программе</p>
 </body>
 </html>

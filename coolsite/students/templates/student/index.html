@@ -5,6 +5,14 @@
     <title>{{title}}</title>
 </head>
 <body>
+<h1>{{menu.0.title}}</h1>
+<ul>
+    {% for m in menu %}
+<li>
+    <a href="{% url m.url_n %}"> {{m.title}} </a>
+</li>
+    {% endfor %}
+</ul>
 
 </body>
 </html>

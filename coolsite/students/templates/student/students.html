@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Список группы ИСТ-201</title>
 </head>
 <body>
+<h1>{{menu.2.title}}</h1>
+
+<ul>
+    {% for m in menu %}
+<li>
+    <a href="{% url m.url_n %}"> {{m.title}} </a>
+</li>
+    {% endfor %}
+</ul>
+
+<ol>
+{% for s in students %}
+    {% if s.pol == 'girl' %}
+    <li>
+        <a href="{% url 'stud_id' s.id %}">
+            <strong>{{s.FI}}</strong>
+        </a>
+    </li>
+    {% else %}
+    <li>
+        <a href="{% url 'stud_id' s.id %}">
+            <i>{{s.FI}}</i>
+        </a>
+    </li>
+    {% endif %}
+{% endfor %}
+</ol>
 
 </body>
 </html>
